@@ -1,0 +1,252 @@
+React
+
+What is React?
+   React is yet another DOM lib
+
+DOM?
+
+HTML
+
+1.HTML IS PL? - YES
+2.HTML Is compiled -YES
+3.HTML is excuted-YES
+
+index.html -source code
+
+<body>
+  <div>
+     <h1>Welcome</h1>
+  </div>
+</body>
+loader---LOAD Code into browser
+ |
+   from file: or http:
+ |
+ parser : parser is special compiler which converts source into lexcial tree(string tree)
+ |
+body
+  div
+     h1
+        Welcome 
+     h1
+  div
+body
+|
+|
+ compilation : Convert this into assembly
+|
+body -load xxx
+  div
+     h1
+        Welcome 
+     h1
+  div
+body
+...................................................
+|
+ HTML Execution engine : Request Os ,to allocate memory :Runtime
+|
+-LinkedList
+body -Node
+  div -Node
+     h1 -Node
+        Welcome -Node
+     h1
+  div
+body
+
+ Linking the Nodes: Tree
+body  -Node
+  |
+  div -Node
+    |
+     h1 -Node
+      |
+        Welcome -Node
+        |
+     h1
+  div
+body
+
+Web:
+
+1.89 - 95 - static web
+2.96- dynamic web -Generate HTML Docs out of data.
+   CGI
+
+Why React?
+
+React was created to replace MVC design pattern in the face book app stack.
+
+Face book created a design pattern
+
+Flux
+state layer(data and how to change data)-Flux.js
+View Layer/Presentation layer - React
+
+Flux : 
+
+State should be not be mutated- Side effects
+
+- Functional Programming concepts
+
+1.Pure function
+2.Immutablity
+3.Time travel
+
+React Core Concepts
+
+JSX
+...........................................................................................
+
+React coding:
+
+setup project
+
+react cli - create-react-app
+
+api:
+
+react.js
+react-dom.js
+
+DOM object= Component
+
+JSX: Declarative language to create components
+
+component creational patterns
+
+-var
+
+Barrel export:
+
+-if there are multiple files inside one  folder
+
+ folder1
+    -f1
+    -f2
+    -fn
+
+when we import 
+
+ import {something1} from 'folder1/f1'
+ import {something2} from 'folder1/f2'
+ import {something3} from 'folder1/f3'
+
+How to simplifiy
+
+inside each folder
+
+ index.js
+
+rexport all files
+
+...........................................................................................
+
+CSS ;
+
+-external css
+ class  
+-inline css
+ style
+
+<div style="color:red">
+
+<dic class="background">
+
+
+html attributes:
+
+In JSX code, html attributes should not be used as it is.
+
+JSX rule for attributes:
+
+ camelCase
+
+style ----style
+class-----className
+onclick ---onClick
+
+https://reactjs.org/docs/dom-elements.html#all-supported-html-attributes
+
+
+css can be our own css, or third party css-bootstrap
+.............................................................................................
+Static UI - only markup
+Dynamic UI -  MARKUP + data.
+.............................................................................................
+
+Data Binding:
+
+ -props pattern -  property pattern
+ -state pattern 
+
+   <div id="test">
+
+  <Main  name="Make My Trip" />
+	  |       | 
+      proerty    property value
+
+property can be string,number,boolean,object,array
+
+
+function Main(variable){ 
+
+  return <div>
+	<h2>Name : variable.name
+  </div>
+}
+
+  Main({name})
+ <Main  {name="Make My Trip" a=10 b=20 c=90 } />
+
+ 
+FP Principle :
+
+1.PURE Function.
+A.function which receives input, return the same =>function never modify the input
+
+Pure 
+   function sayHello(message){
+           return message
+   } 
+   sayHello("hello")
+
+   function updateProfile(profile){
+           return profile
+   } 
+   sayHello({ id:1,name:'foo'})
+
+ impure function;
+
+   function sayHello(message){
+           return message.trim();
+   } 
+
+Pure ? Yes
+
+if cmp receives props, returns the same , that cmp fun is called pure function.
+
+export const Customer = props => {
+   return <div>
+        <h2>{props.name}</h2>
+        <address>
+            <p>{props.address.city},{props.address.state} {props.address.country}</p>
+        </address>
+    </div>
+}
+
+<Customer  name="Make My Trip" address={{state:'Tamil Nadu',city:'Coimbatore',country:'India'}} />
+
+Customer({name:"Make My Trip" address:{state:'Tamil Nadu',city:'Coimbatore',country:'India'}})
+
+
+
+
+
+
+
+
+
+
+
