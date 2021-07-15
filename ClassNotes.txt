@@ -240,6 +240,220 @@ export const Customer = props => {
 
 Customer({name:"Make My Trip" address:{state:'Tamil Nadu',city:'Coimbatore',country:'India'}})
 
+.............................................................................................
+
+What can be  prop?
+
+data as prop
+-number
+-string
+-boolean
+-array
+-object
+
+-static prop
+-dynamic prop
+
+.........
+component/or dom element prop
+function as prop
+Arrays and React:
+
+arrays api:
+ iterator
+  for... --
+  for...each -- mutable apis
+  map - pure function : returns new array
+  filter
+  reduce
+ ..........
+
+based on array we can build lot of layouts
+
+1.listview -ul .. li
+2.cardview - div,header,footer...
+3.gridview -table tr
+.............................................................................................
+
+Style Should be object
+
+css styles can be given 
+
+1.via css selectors
+
+class="container"
+style="color:red;"
+
+css language uses dash case
+
+background-color
+
+2.via object -javascript
+
+javascript uses camel case
+backgroundColor
+style=
+...........................................................................................
+
+Component/dom element as Prop.
+
+
+
+<Tab> -parent
+   ? child
+</Tab>
+<Tab/>
+.............................................................................................
+
+Data 
+
+static data - as prop
+dynamic data 
+
+How to change data/state
+
+When user interacts with ui then state would be changed, when ever state changed ui will updat e the changes.
+
+-How to change data
+-Event Handling
+
+class component.
+
+-via props - data from outside component -  stateless component
+-via state - data inside component -statefull
+
+
+state should be encasulated into object.
+
+Event Binding:
+
+Event Handling:
+
+Button==>event====>Listener(callback)
+
+4.1.How to bind event
+ <button onclick="listner">text</button> -js
+
+render : method is  called by react engine to prepare object tree(vdom)
+
+setState;
+setState(updater, [callback])
+
+pure function Principle 2:
+
+if function receives input, what if i want to modifiy the input.->pure?
+
+Yes-How to make pure functions with data(state) changes? - Immuablity.
+
+
+
+array:
+
+add:
+  - push - concat
+  - map
+  - filter
+
+-why pure
+-no data corrouption in concurrency world
+-time travel.
+
+setState(func,callback)
+
+func - pure function -  returns new state
+
+func - (state) => stateChange
+
+
+setState
+..............................................................................................
+
+Hooks:
+
+Hook is a special function that lets y "hooks into" react features.
+
+
+
+objective of hooks:
+
+1.to eleminate class components as much possible.
+
+2.Resuable application behaviours
+  eg:ajax calls
+
+
+
+eg Hooks:
+
+1.if i am going to remove class means, how can i handle state inside function components.
+  useState hook
+
+"use"+functionName ==>hook Syntax
+"useState"
+"useContext"
+"useEffect"
+"useAjax"
+"useWebSocket"
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+Container Component
+
+Pretentational Component
+
+Component = {data + biz logic + UI} - nOT Recommended
+
+Component -  data + biz logic  - Container cmp
+    |
+  as prop - dynamic props + function as prop
+Component  - data(PROPS) + UI - presentational
+
+...........................................................................................
+
+Component life cycles
+
+1-Mount
+2.Update
+3.UnMount
+
+Mount
+
+ -render -
+ -componentDidMount
+   -for resource intensive task - ajax calls,websocket calls , timers.....
+
+ajax calls
+
+-fetch
+-axios
+//////////////////////////////////////////////////////////////////////////////////////////
+				 State managment
+.......................................................................................
+
+According to flux pattern:
+
+state  +biz logic should be isloated from componnent-View
+
+1.store
+2.action
+3.reducer
+4.subscriber
+
+
+
+store : db where all application state is stored
+
+action -  request send by UI in order to do biz
+
+reducer - pure function which executes biz logic
+
+subscriber -  listener/view
+///////////////////////////////////////////////////////////////////////////////////////////
+SPA:
+.....
+
+Router
+
+
 
 
 
